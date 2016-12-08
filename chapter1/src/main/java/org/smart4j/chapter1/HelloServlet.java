@@ -19,7 +19,7 @@ import java.util.Date;
  * @description: 使用WebServlet注解并配置请求路径，对外发布Servlet服务，
  *      不需要再web.xml中添加任何配置(Servlet3.0规范)。
  */
-@WebServlet( "hello" )
+@WebServlet( "/hello" )
 public class HelloServlet extends HttpServlet {
 
     @Override
@@ -27,7 +27,6 @@ public class HelloServlet extends HttpServlet {
             throws ServletException, IOException {
 
         //super.doGet(req, resp);
-
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime = dateFormat.format(new Date());
         req.setAttribute("currentTime",currentTime);
